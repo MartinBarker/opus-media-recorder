@@ -32,7 +32,25 @@ let status = document.querySelector('#status');
 
 // This creates a MediaRecorder object
 buttonCreate.onclick = () => {
-  navigator.mediaDevices.getUserMedia({audio: true, video: false})
+  navigator.mediaDevices.getUserMedia({
+    audio: {
+      autoGainControl: false,
+      echoCancellation: false,
+      noiseSuppression: false,
+      channelCount:2,
+      sampleSize: 24,
+      sampleRate: 44100,
+
+    }, 
+    "mandatory": {
+      "googEchoCancellation": "false",
+      "googAutoGainControl": "false",
+      "googNoiseSuppression": "false",
+      "googHighpassFilter": "false"
+    },
+    video: false
+  })
+
     .then((stream) => {
       if (recorder && recorder.state !== 'inactive') {
         console.log('Stop the recorder first');

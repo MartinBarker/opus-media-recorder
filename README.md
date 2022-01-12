@@ -1,3 +1,11 @@
+# to run:
+clone repo
+run `npm i` ( in linux or windows subsystem linux, dont use command prompt)
+run `npm run serve`
+connect online at url: `https://localhost:9000/`
+select 'wave' from MIME Type
+location of recording logic changes: docs/example.js
+
 # opus-media-recorder
 
 * [Try it!](https://kbumsik.io/opus-media-recorder/)
